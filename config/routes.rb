@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/new'
+ # get 'users/new'
 
-  get 'users/index'
+ # get 'users/index'
 
-  get 'users/edit'
+ # get 'users/edit'
 
-  get 'users/show'
-
+ # get 'users/show'
+  resources :users
   root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
