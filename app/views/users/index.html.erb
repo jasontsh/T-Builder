@@ -1,2 +1,18 @@
 <h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<table>
+	<tr>
+		<td>name</td>
+		<td>email</td>
+		<td>password</td>
+	</tr>
+	<% @users.each do |user| %>
+		<tr>
+			<td> <%= link_to user.name, user_path(user.id)%></td>
+			<td> <%= user.email %></td>
+			<td> <%= user.password %></td>
+
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "Add new user", new_user_path%>

@@ -1,2 +1,17 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div>
+	<h2><%= @user.name%></h2>
+	<p><%=@user.email%></p>
+	<p><%=@user.password%></p>
+	<p><%=@user.password%></p>
+	<%= image_tag @user.avatar.url %>
+	<br>
+	<%= image_tag @user.avatar.url(:medium) %>
+	<br>
+	<%= image_tag @user.avatar.url(:thumb) %>
+	<br>
+</div>
+
+<%= link_to "edit user", edit_user_path(@user.id)%>
+<%= link_to "destory user", @user, method: :delete %>

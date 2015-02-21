@@ -1,2 +1,26 @@
 <h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>&nbsp;Users#new</h1>
+<%= form_for(@user) do |f| %>
+    <div class="field">
+        <p>&nbsp;&nbsp;name</p> 
+        &nbsp;&nbsp;<%= f.text_field :name%>
+    </div>
+    <div class="field">
+    	<p>&nbsp;&nbsp;email</p>
+    	&nbsp;&nbsp;<%= f.text_field :email%>
+    </div>
+    <div class="field">
+    	<p>&nbsp;&nbsp;password</p>
+    	&nbsp;&nbsp;<%= f.text_field :password%>
+    </div>
+
+    <div style="margin: 9px">
+        <%= f.file_field :avatar %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+    	&nbsp;&nbsp;<%=f.submit%>
+    </div>
+<% end %>
