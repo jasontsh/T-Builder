@@ -1,14 +1,12 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: events
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  email      :string(255)
-#  password   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class User < ActiveRecord::Base
+class Event < ActiveRecord::Base
 end

@@ -1,18 +1,16 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: events
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  email      :string(255)
-#  password   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class EventTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

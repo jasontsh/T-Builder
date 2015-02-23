@@ -1,11 +1,9 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: events
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  email      :string(255)
-#  password   :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -14,10 +12,6 @@
 
 one:
   name: MyString
-  email: MyString
-  password: MyString
 
 two:
   name: MyString
-  email: MyString
-  password: MyString
