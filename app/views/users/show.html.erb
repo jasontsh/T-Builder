@@ -5,12 +5,6 @@
 	<p><%=@user.email%></p>
 	<p><%=@user.password%></p>
 	<p><%=@user.password%></p>
-	<%= image_tag @user.avatar.url %>
-	<br>
-	<%= image_tag @user.avatar.url(:medium) %>
-	<br>
-	<%= image_tag @user.avatar.url(:thumb) %>
-	<br>
 </div>
 
 <%= link_to "edit user", edit_user_path(@user.id)%>
