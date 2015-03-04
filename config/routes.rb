@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :events
-
  # get 'users/new'
 
  # get 'users/index'
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
  # get 'users/show'
   resources :users
   root 'users#index'
+
+  resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
