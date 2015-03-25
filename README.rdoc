@@ -4,4 +4,4 @@ Here is the repo of T-Builder.
 T-Builder is a web app that facilitate team splitting in events.  The idea is that for any event, the event holder could use this app to invite people to join, and the participants can then answer questions to facilitate team splitting.  For example, it might be cool to split teams in different genders, or try the best to maintain a 50-50 ratio.  Then, the web app can calculate the teams and when the participants check back, they can get into teams or groups.  Afterwards, the event holder has the option of creating a survey for the event.  He will then get feedback from the participants.
 Logistics: We will probably use phone numbers and/or emails to invite and confirm.  Therefore, we probably will use Twillio and research for a email sending api.  Then, we also need a backend to save all the results.  The app also needs to do some computing for dividing into groups.  Graphics are not necessarily the hardest part.
 
-Status: in progress for hw 4- 1 table completed.
+Status: hw 4 and hw 5 complete

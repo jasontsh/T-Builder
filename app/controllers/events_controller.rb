@@ -9,10 +9,11 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       render 'new'
+    end
   end
 
   def index
-  	@event = Event.all
+  	@events = Event.all
   end
 
   def show

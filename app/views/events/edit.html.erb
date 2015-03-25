@@ -1,0 +1,13 @@
+<h1>&nbsp;Events#edit</h1>
+<%= form_for(@event) do |f| %>
+    <div class="field">
+        <p>&nbsp;&nbsp;name</p> 
+        &nbsp;&nbsp;<%= f.text_field :name%>
+    </div>
+
+    <br>
+
+    <div class="actions">
+    	&nbsp;&nbsp;<%=f.submit%>
+    </div>
+<% end %>
