@@ -1,23 +1,34 @@
 Rails.application.routes.draw do
-  get 'attributes/new'
+  get 'characteristics/new'
 
-  get 'attributes/index'
+  get 'characteristics/index'
 
-  get 'attributes/edit'
+  get 'characteristics/show'
 
-  get 'attributes/show'
+  get 'characteristics/edit'
 
- # get 'users/new'
+  get 'characteristics/destroy'
 
- # get 'users/index'
+  devise_for :users
+  get 'events/new'
 
- # get 'users/edit'
+  get 'events/index'
 
- # get 'users/show'
+  get 'events/edit'
+
+  get 'events/show'
+
+  get 'users/new'
+
+  get 'users/index'
+
+  get 'users/edit'
+
+  get 'users/show'
   resources :users
 
   resources :events
-  root 'events#index'
+  root 'users#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

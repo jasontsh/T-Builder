@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   def new
-  	@event = Event.new
+    if user_sign_in?
+  	  @event = Event.new
+    else 
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -13,7 +17,11 @@ class EventsController < ApplicationController
   end
 
   def index
-  	@events = Event.all
+    if user_sign_in?
+  	  @events = Event.all
+    else 
+      @events = []
+    end
   end
 
   def show

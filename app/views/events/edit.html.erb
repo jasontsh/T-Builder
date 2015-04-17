@@ -1,6 +1,7 @@
 <h1>&nbsp;Events#edit</h1>
 <%= form_for(@event) do |f| %>
     <div class="field">
+        <%= f.hidden_field: user_id, :value =>current_user.id%>
         <p>&nbsp;&nbsp;name</p> 
         &nbsp;&nbsp;<%= f.text_field :name%>
     </div>

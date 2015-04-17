@@ -1,18 +1,13 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: characteristics
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  password   :string(255)
+#  value      :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-require 'test_helper'
-
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Characteristic < ActiveRecord::Base
 end
