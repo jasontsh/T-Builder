@@ -18,14 +18,7 @@ Rails.application.routes.draw do
 
   get 'events/show'
 
-  get 'users/new'
-
-  get 'users/index'
-
-  get 'users/edit'
-
-  get 'users/show'
-  resources :users
+  resources :users, only: [:index, :show]
 
   resources :events
   root 'users#index'
