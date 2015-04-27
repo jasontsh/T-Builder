@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
   get 'events/show'
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do 
+    resources :events
+  end
 
   resources :events
   root 'users#index'

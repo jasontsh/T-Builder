@@ -5,6 +5,3 @@
 	<p><%=@user.email%></p>
 	<p><%=@user.password%></p>
 </div>
-
-<%= link_to "edit user", edit_user_path(@user.id)%>
-<%= link_to "destory user", @user, method: :delete %>
