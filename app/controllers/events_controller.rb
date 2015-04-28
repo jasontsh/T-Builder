@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def new
     if user_signed_in?
   	  @event = Event.new
-      @event.userid = current_user
+      @event.userid = current_user.id
     else 
       redirect_to new_user_session_path
     end
@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.userid = current_user.id
     if @event.save
       redirect_to events_path
     else
@@ -19,7 +20,7 @@ class EventsController < ApplicationController
 
   def index
     if user_signed_in?
-  	  @events = Event.where("userid = ?", current_user.id)
+  	  @events = Event.where({userid: current_user.id})
     else 
       @events = []
     end
