@@ -9,8 +9,26 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = Event.new
     @event.userid = current_user.id
+    @event.name = params[:name]
+    s = params[:characteristics]
+    s = s.downcase
+    @event.characteristic = s
+    e = params[:email_list]
+    el = e.split(",")
+    users = User.all
+    el.each do |email|
+      users.each do |u| 
+        if u.email == email 
+          rel = Relation.new({:userid => u.id, :eventid => @event.id, :status => 0})
+          rel.save
+        elsif u.id == current_user.id
+          rel = Relation.new({:userid => u.id, :eventid => @event.id, :status => 2})
+          rel.save
+        end
+      end
+    end
     if @event.save
       redirect_to events_path
     else
@@ -20,6 +38,7 @@ class EventsController < ApplicationController
 
   def index
     if user_signed_in?
+      byebug
   	  @events = Event.where({userid: current_user.id})
     else 
       @events = []
@@ -28,6 +47,20 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    relationlist = Relation.where({eventid: @event.id})
+    @userlist = []
+    @statuslist = []
+    relationlist.each do |rel|
+      user = User.where({id: rel.userid})
+      @userlist << user.name
+      if rel.status == 0
+        @statuslist << "waiting for reply"
+      elsif rel.status == 1
+        @statuslist << "owner"
+      else 
+        @statuslist << "attending"
+      end
+    end
   end
 
   def edit
@@ -52,6 +85,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name)
+    params.require(:event).permit(:name, :characteristic)
   end
 end

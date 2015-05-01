@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'relations/new'
+
+  get 'relations/destroy'
+
   get 'characteristics/new'
 
   get 'characteristics/index'

@@ -1,6 +1,15 @@
 <h1><%= @event.name%></h1>
 
-
+<table>
+	<% i = 0%> 
+	<% @userlist.each do |user| %>
+	<tr>
+		<td> <%= user%></td>
+		<td> <%= @statuslist[i]%></td>
+		<% i=i+1 %>
+	</tr>
+	<% end %>
+</table>
 <%= link_to "edit event", edit_event_path(@event.id)%>
 <%= link_to "destory event", @event, method: :delete %>
 

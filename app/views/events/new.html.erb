@@ -1,11 +1,20 @@
-<h1>Events#new</h1>
-<%= form_for(@event) do |f| %>
-    <div class="field">
-        <p>&nbsp;&nbsp;name</p> 
-        &nbsp;&nbsp;<%= f.text_field :name%>
-    </div>
+<h1>Create event</h1>
+<%= form_tag({:controller => "events", :action => "create"}, :method => "post") do %>
+    <%=label_tag 'name' %>
+    <br/>
+    <%=text_field_tag 'name' %>
+    <br/>
+    <br/>
+    <%=label_tag 'characteristics (please separate all the fields by ",")' %>
+    <br/>
+    <%=text_field_tag 'characteristics' %>
+    <br/>
+    <br/>
+    <%=label_tag 'email list (please separate all the fields by ",")
+    At the moment the application only supports users who have joined the application' %>
+    <br/>
+    <%=text_field_tag 'email_list' %>
+    <br/>
 
-    <div class="actions">
-    	&nbsp;&nbsp;<%=f.submit%>
-    </div>
-<% end %>
+    <div><%= submit_tag 'Create' %></div>
+<% end -%>

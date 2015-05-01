@@ -51,3 +51,15 @@ class UsersController < ApplicationController
   end
 
 end
+
+class Characteristic
+  attr_accessor :clist, :jstring
+  def initialize(json)
+    @jstring = json
+    @clist = ActiveSupport::JSON.decode{json}
+  end
+
+  def getJsonValue(key)
+    return @clist[:key]
+  end
+end

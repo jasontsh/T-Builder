@@ -9,6 +9,5 @@
 #
 
 class Event < ActiveRecord::Base
-	belongs_to :user
-	has_many :characteristics
+	has_many :relations
 end
