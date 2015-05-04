@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'users#index'
+  resources :events
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :users, only: [:index, :show]
+  post 'users/update_characteristics/:id' => 'users#update_characteristics'
+=begin  
   get 'relations/new'
 
   get 'relations/destroy'
@@ -12,8 +18,9 @@ Rails.application.routes.draw do
   get 'characteristics/edit'
 
   get 'characteristics/destroy'
+=end
 
-  devise_for :users
+=begin
   get 'events/new'
 
   get 'events/index'
@@ -21,13 +28,11 @@ Rails.application.routes.draw do
   get 'events/edit'
 
   get 'events/show'
+=end
 
-  resources :users, only: [:index, :show] do 
-    resources :events
-  end
+  
 
-  resources :events
-  root 'users#index'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

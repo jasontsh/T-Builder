@@ -4,13 +4,29 @@
 	<% i = 0%> 
 	<% @userlist.each do |user| %>
 	<tr>
-		<td> <%= user%></td>
+		<td> <%= user.name%></td>
 		<td> <%= @statuslist[i]%></td>
+		<% if @status == 2 %>
+			<% if !user.characteristic.nil? %> 
+				<% characteristic = ActiveSupport::JSON.decode(user.characteristic) %> 
+	    		<% characteristic.each do |k, v|%>
+	    			<td> <%= k %> = <%= v%></td>
+	    		<% end %>
+	    	<% end %>
+		<% end %>
 		<% i=i+1 %>
 	</tr>
 	<% end %>
 </table>
-<%= link_to "edit event", edit_event_path(@event.id)%>
-<%= link_to "destory event", @event, method: :delete %>
+
+<% if @status == 0%>
+	<p>Please consider signing up for this event!</p>
+	<%= link_to "going!", edit_event_path(@event.id, status: 0)%>
+<% elsif @status == 2%>
+	<%= link_to "edit event", edit_event_path(@event.id, status: 2)%>
+	<%= link_to "destory event", @event, method: :delete %>
+<% end %>
+
+
 
 <%= link_to "event list", events_path%>

@@ -1,15 +1,16 @@
-<h1>&nbsp;Events#edit</h1>
-<%= form_for(@event) do |f| %>
-    <div class="field">
-        <p>&nbsp;&nbsp;name</p> 
-        &nbsp;&nbsp;<%= f.text_field :name%>
-    </div>
+<% if @status == 0%>
+<h1>Form for <%=@event.name %></h1>
+<% else%>
+<h1>Edit <%=@event.name %></h1>
+<% end %>
 
-    <br>
-
-    <div class="actions">
-    	&nbsp;&nbsp;<%=f.submit%>
-    </div>
-
-
+<%= form_tag "/users/update_characteristics/#{@event.id}", method: :post do %>
+	<% @show.each do |key, val| %>
+		<%= label_tag("characteristic[#{key}]", key) %>
+		<%= text_field_tag("characteristic[#{key}]", val) %>
+		<br/>
+	<% end %>
+	<% if !@show.empty? %>
+		<%= submit_tag "Save" %>
+	<% end %>
 <% end %>

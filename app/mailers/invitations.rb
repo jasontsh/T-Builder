@@ -8,8 +8,8 @@ class Invitations < ActionMailer::Base
   #
   def new_invite(from, to)
     @greeting = "Hi!"
-    @from = from.name
+    @from = from
 
-    mail to: to.email
+    mail to: to
   end
 end

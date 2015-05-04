@@ -5,7 +5,7 @@
 	</tr>
 	<% @events.each do |event| %>
 		<tr>
-			<td> <%= link_to event.name, event_path(event.id)%></td>
+			<td> <%= link_to event.first.name, event_path(event.first.id)%></td>
 		</tr>
 	<% end %>
 </table>
