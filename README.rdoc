@@ -17,3 +17,5 @@ HW 9: I am reducing the size of the project into that users can only invite othe
 Final Project submission: the project is completed.  The app is again simplified so that the application does not split the users into the teams since it requires a lot of pattern matching, and entry such as "guy" and "man" and other synonyms could cause great trouble in the matching.  Thus, the characteristics of every users are listed for the owner of the event, for the owner to decide who goes into which team.  Also, it is set so that the owner can only see the fields that the event requires, so that no extra information is leaked.  
 
 Note: the project's layout is not the best, but that and other parts of the projects belongs to my partner of this project.  However, he has not been commiting any codes and contributing anything in this project.
+
+Heroku link: https://t-builder.herokuapp.com/
